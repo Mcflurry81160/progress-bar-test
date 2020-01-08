@@ -16,11 +16,14 @@ namespace progress_bar_test_3_dnf
         public Form1()
         {
             InitializeComponent();
+
+            //Hide the progress bar initially
             progressBar1.Visible = false;
         }
 
         private void StartProcess_Click(object sender, EventArgs e)
         {
+            //Start showing the progress bar now
             progressBar1.Visible = true;
             btnStartProcess.Enabled = false;
             progressBar1.Style = ProgressBarStyle.Marquee;
@@ -34,8 +37,8 @@ namespace progress_bar_test_3_dnf
 
         void bw_DoWork(object sender, DoWorkEventArgs e)
         {
-            // INSERT TIME CONSUMING OPERATIONS HERE
-            // THAT DON'T REPORT PROGRESS
+            //Add the work to do here
+            //Reporting progress is not required as this is a marquee style progress bar
             Thread.Sleep(10000);
         }
 
